@@ -1,0 +1,32 @@
+<%= form_for(@student) do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<p>
+	<%= f.label :name, '名前' %>
+	<%= f.text_field :name %>
+</p>
+<p>
+	<%= f.label :yomi, 'ヨミ' %>
+	<%= f.text_field :yomi %>
+</p>
+<p>
+	<%= f.label :grade, '学年' %>
+	<%= f.select :grade, ['中１','中２','中３','小４','小５','小６',
+			'高１','高２','高３','小１','小２','小３'] %>
+</p>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

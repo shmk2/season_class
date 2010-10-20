@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<h1>生徒情報</h1>
+<p>
+	名前：<%= @student.name %>
+</p>
+<p>
+	ヨミ：<%= @student.yomi %>
+</p>
+<p>
+	学年：<%= @student.grade %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

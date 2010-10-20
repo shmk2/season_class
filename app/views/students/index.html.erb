@@ -1,0 +1,32 @@
+<h1>Listing students</h1>
+
+<%= link_to '全員', :action => 'index', :grade => '全員' %>
+<%= link_to '中１', :action => 'index', :grade => '中１' %>
+<%= link_to '中２', :action => 'index', :grade => '中２' %>
+<%= link_to '中３', :action => 'index', :grade => '中３' %>
+<%= link_to '小４', :action => 'index', :grade => '小４' %>
+<%= link_to '小５', :action => 'index', :grade => '小５' %>
+<%= link_to '小６', :action => 'index', :grade => '小６' %>
+<%= link_to '高１', :action => 'index', :grade => '高１' %>
+<%= link_to '高２', :action => 'index', :grade => '高２' %>
+<%= link_to '高３', :action => 'index', :grade => '高３' %>
+<%= render :partial => 'student', :locals => { :grade => '中３' } %>
+
+<table>
+  <tr>
+		<th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @students.each do |student| %>
+  <tr>
+		<td><%= student.name %></td>
+    <td><%= link_to 'Show', student %></td>
+    <td><%= link_to 'Edit', edit_student_path(student) %></td>
+    <td><%= link_to 'Destroy', student, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'New Student', new_student_path %>
