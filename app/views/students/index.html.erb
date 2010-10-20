@@ -1,32 +1,11 @@
 <h1>Listing students</h1>
 
-<%= link_to '全員', :action => 'index', :grade => '全員' %>
-<%= link_to '中１', :action => 'index', :grade => '中１' %>
-<%= link_to '中２', :action => 'index', :grade => '中２' %>
-<%= link_to '中３', :action => 'index', :grade => '中３' %>
-<%= link_to '小４', :action => 'index', :grade => '小４' %>
-<%= link_to '小５', :action => 'index', :grade => '小５' %>
-<%= link_to '小６', :action => 'index', :grade => '小６' %>
-<%= link_to '高１', :action => 'index', :grade => '高１' %>
-<%= link_to '高２', :action => 'index', :grade => '高２' %>
-<%= link_to '高３', :action => 'index', :grade => '高３' %>
-<%= render :partial => 'student', :locals => { :grade => '中３' } %>
+<%= link_to '全員', students_path(:grade => '全員'), :remote => true %>
+<%= link_to '小学生', students_path(:grade_category => '小学生'), :remote => true %>
+<%= link_to '中学生', students_path(:grade_category => '中学生'), :remote => true %>
+<%= link_to '高校生', students_path(:grade_category => '高校生'), :remote => true %>
 
-<table>
-  <tr>
-		<th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-<% @students.each do |student| %>
-  <tr>
-		<td><%= student.name %></td>
-    <td><%= link_to 'Show', student %></td>
-    <td><%= link_to 'Edit', edit_student_path(student) %></td>
-    <td><%= link_to 'Destroy', student, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div id='grade'></div>
+<div id='student_table'></div>
 
 <%= link_to 'New Student', new_student_path %>

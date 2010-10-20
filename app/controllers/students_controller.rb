@@ -4,17 +4,15 @@ class StudentsController < ApplicationController
   # GET /students.xml
   def index
 
+    @grade_category = params[:grade_category]
     @grade = params[:grade]
-    if (@grade == '全員' or @grade == nil)
+
+    if (@grade == '全員')
       @students = Student.order(:yomi).all
     else
       @students = Student.grade(@grade).order(:yomi)
     end
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @students }
-    end
+    render
   end
 
   # GET /students/1
