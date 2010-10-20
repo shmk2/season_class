@@ -1,0 +1,17 @@
+<% if @grade_category == '小学生' %>
+<%= link_to '小１', students_path(:grade_category => '小学生', :grade => '小１'), :remote => true %>
+<%= link_to '小２', students_path(:grade_category => '小学生', :grade => '小２'), :remote => true %>
+<%= link_to '小３', students_path(:grade_category => '小学生', :grade => '小３'), :remote => true %>
+<%= link_to '小４', students_path(:grade_category => '小学生', :grade => '小４'), :remote => true %>
+<%= link_to '小５', students_path(:grade_category => '小学生', :grade => '小５'), :remote => true %>
+<%= link_to '小６', students_path(:grade_category => '小学生', :grade => '小６'), :remote => true %>
+<% elsif @grade_category == '中学生' %>
+<%= link_to '中１', students_path(:grade_category => '中学生', :grade => '中１'), :remote => true %>
+<%= link_to '中２', students_path(:grade_category => '中学生', :grade => '中２'), :remote => true %>
+<%= link_to '中３', students_path(:grade_category => '中学生', :grade => '中３'), :remote => true %>
+<% elsif @grade_category == '高校生' %>
+<%= link_to '高１', students_path(:grade_category => '高校生', :grade => '高１'), :remote => true %>
+<%= link_to '高２', students_path(:grade_category => '高校生', :grade => '高２'), :remote => true %>
+<%= link_to '高３', students_path(:grade_category => '高校生', :grade => '高３'), :remote => true %>
+<% else %>
+<% end %>
