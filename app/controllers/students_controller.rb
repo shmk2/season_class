@@ -7,7 +7,9 @@ class StudentsController < ApplicationController
     @grade_category = params[:grade_category]
     @grade = params[:grade]
 
-    if (@grade == '全員')
+    if @grade == nil && @grade_category != nil
+      @students = Student.grade(@grade_category).order(:yomi)
+    elsif @grade == '全員'
       @students = Student.order(:yomi).all
     else
       @students = Student.grade(@grade).order(:yomi)

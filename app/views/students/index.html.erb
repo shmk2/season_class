@@ -1,9 +1,9 @@
 <h1>Listing students</h1>
 
 <%= link_to '全員', students_path(:grade => '全員'), :remote => true %>
-<%= link_to '小学生', students_path(:grade_category => '小学生'), :remote => true %>
-<%= link_to '中学生', students_path(:grade_category => '中学生'), :remote => true %>
-<%= link_to '高校生', students_path(:grade_category => '高校生'), :remote => true %>
+<%= link_to '小学生', students_path(:grade_category => '小'), :remote => true %>
+<%= link_to '中学生', students_path(:grade_category => '中'), :remote => true %>
+<%= link_to '高校生', students_path(:grade_category => '高'), :remote => true %>
 
 <div id='grade'></div>
 <div id='student_table'></div>
